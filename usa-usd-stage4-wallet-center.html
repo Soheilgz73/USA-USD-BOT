@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>USA.USD — Wallet Center</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#244c78,#102b4b 43%,#07182d);color:#f7f8fc;font:15px/1.5 Arial,sans-serif}
+header{padding:19px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff20}.brand{font-size:20px;font-weight:900;letter-spacing:2px}.brand span{color:#e8bd62}.tag{font-size:10px;border:1px solid #e8bd6266;color:#f0d18d;padding:6px 10px;border-radius:30px}
+main{max-width:850px;margin:auto;padding:22px 16px 40px}.back{color:#e8bd62;text-decoration:none;font-size:12px}.heading{margin:16px 0}.heading h1{font-size:27px;margin:0}.heading p{color:#afbed1;font-size:13px;margin:5px 0}
+.balance{padding:21px;border-radius:20px;background:linear-gradient(120deg,#1b5489,#112f54 65%,#752b3b);border:1px solid #ffffff25;box-shadow:0 16px 40px #0004}.balance small{color:#d5e1ef;letter-spacing:1.5px;font-size:10px}.amount{font-size:38px;font-weight:800;margin:6px 0}.muted{font-size:11px;color:#c4d0df}
+.actions{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}.btn{padding:11px 15px;border:0;border-radius:10px;font-weight:700;cursor:pointer}.gold{background:linear-gradient(120deg,#f5d995,#d9a642);color:#172b42}.outline{background:#ffffff12;border:1px solid #ffffff3a;color:white}
+.panel{margin-top:17px;padding:17px;border:1px solid #ffffff20;background:#ffffff0b;border-radius:16px}.panel h2{font-size:15px;margin:0 0 12px}.field{display:flex;align-items:center;gap:8px;background:#071b31;border:1px solid #ffffff25;padding:10px;border-radius:10px}.field code{font-size:11px;color:#cbd7e6;overflow-wrap:anywhere;flex:1}.copy{border:0;background:#e8bd62;color:#152b43;border-radius:8px;padding:8px 10px;font-weight:800;cursor:pointer}.notice{margin-top:14px;padding:13px;border-radius:12px;border:1px solid #e8bd6255;background:#e8bd6210;color:#f0ddb6;font-size:12px}.row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #ffffff13;font-size:12px}.row:last-child{border:0}.row span:last-child{color:#aebdd0}
+@media(min-width:600px){main{padding-top:30px}.heading h1{font-size:32px}}
+</style></head>
+<body>
+<header><div class="brand">USA<span>.</span>USD</div><div class="tag">▣ WALLET CENTER</div></header>
+<main><a class="back" href="index.html">← BACK TO DASHBOARD</a>
+<div class="heading"><h1>Your Wallet</h1><p>View your balance and manage wallet activity in one place.</p></div>
+<section class="balance"><small>AVAILABLE BALANCE</small><div class="amount">$0.00</div><div class="muted">Preview balance · Not connected to live funds</div><div class="actions"><button class="btn gold" onclick="alert('Deposit flow is not active yet.')">＋ Deposit</button><button class="btn outline" onclick="alert('Withdrawal flow is not active yet.')">↗ Withdraw</button></div></section>
+<section class="panel"><h2>Deposit Address</h2><div class="field"><code>Wallet address will appear here after secure backend setup.</code><button class="copy" onclick="navigator.clipboard?.writeText('')">COPY</button></div><div class="notice"><strong>Deposit notice:</strong> Do not send funds to this preview. A verified personal deposit address and supported network must be configured before deposits are enabled.</div></section>
+<section class="panel"><h2>Wallet Rules</h2><div class="row"><span>Minimum deposit</span><strong>$10</strong></div><div class="row"><span>Minimum withdrawal</span><strong>$2</strong></div><div class="row"><span>Withdrawal frequency</span><strong>Once every 24 hours</strong></div><div class="row"><span>Network</span><span>To be confirmed</span></div></section>
+<section class="panel"><h2>Recent Transactions</h2><div class="row"><span>No transactions yet</span><span>—</span></div></section>
+<div class="notice">This is a visual wallet interface only. Deposits, withdrawals, address generation, and balances are not live. Real-money functionality requires a secure backend, transaction monitoring, and appropriate legal and compliance checks.</div>
+</main></body></html>
