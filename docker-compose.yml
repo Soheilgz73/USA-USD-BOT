@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: usa
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: usa_usd
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U usa -d usa_usd"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  api:
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+  deposit-watcher:
+    build: .
+    command: ["python", "deposit_worker.py"]
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  pgdata:
