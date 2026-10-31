@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b2442">
+<title>USA.USD — Digital Platform</title>
+<style>
+:root{--bg:#07182d;--blue:#174c83;--red:#a92e3d;--gold:#e8bd62;--text:#f7f8fc;--muted:#aebdd0;--line:#ffffff20}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% -10%,#315c88 0,#102b4a 38%,var(--bg) 78%);color:var(--text);font:15px/1.5 Arial,sans-serif;min-height:100vh}
+header{position:sticky;top:0;z-index:5;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#081b31ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}.seal{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#f5d995,#bd852d);display:grid;place-items:center;color:#102b4a;font-size:22px;font-weight:900}.brand b{display:block;letter-spacing:2px;font-size:18px}.brand small{display:block;color:#b8c5d7;font-size:9px;letter-spacing:1.6px}.secure{font-size:9px;color:#f0d18d;border:1px solid #e8bd6266;border-radius:30px;padding:6px 9px}
+main{max-width:1050px;margin:auto;padding:20px 15px 95px}.page{display:none}.page.active{display:block}.welcome{margin:8px 0 17px}.welcome h1{font-size:27px;margin:0}.welcome p{color:var(--muted);font-size:13px;margin:4px 0}
+.hero{border:1px solid #ffffff25;border-radius:20px;padding:21px;background:linear-gradient(115deg,#174c83,#112e52 65%,#792b3b);position:relative;overflow:hidden}.hero:after{content:"🇺🇸";position:absolute;right:13px;top:4px;font-size:76px;opacity:.14}.eyebrow{font-size:10px;letter-spacing:1.6px;color:#d5e1ef}.big{font-size:35px;font-weight:800;margin:6px 0}.muted{color:var(--muted);font-size:12px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer}.gold{background:linear-gradient(120deg,#f5d995,#d9a642);color:#172b42}.ghost{background:#ffffff14;color:white;border:1px solid #ffffff35}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:15px}.tile,.panel,.plan{background:#ffffff0b;border:1px solid var(--line);border-radius:15px;padding:15px}.tile{cursor:pointer;color:white;text-align:left;min-height:105px}.tile .ico{font-size:22px}.tile b{display:block;margin-top:6px;font-size:13px}.tile small{color:var(--muted);font-size:10px}.section-title{font-size:16px;margin:22px 0 10px}.panel{margin-top:14px}.panel h2{font-size:15px;margin:0 0 10px}.notice{margin-top:15px;border:1px solid #e8bd6255;background:#e8bd6210;color:#efddb9;padding:13px;border-radius:13px;font-size:11px}
+.rowline{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #ffffff15;font-size:12px}.rowline:last-child{border:0}.rowline span:last-child{color:#c2cedd}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.plan .level{font-size:9px;letter-spacing:1.2px;color:var(--gold)}.plan strong{display:block;font-size:23px;margin:4px 0}.plan small{font-size:10px;color:var(--muted)}
+.field{margin:10px 0}.field label{display:block;font-size:10px;color:var(--muted);margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:11px;border-radius:9px;border:1px solid #ffffff25;background:#071b31;color:white;font:inherit}.field textarea{min-height:90px}
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:6;display:flex;justify-content:space-around;gap:3px;padding:9px 4px calc(9px + env(safe-area-inset-bottom));background:#081b31f2;border-top:1px solid var(--line);backdrop-filter:blur(12px)}.nav button{flex:1;max-width:115px;background:none;border:0;color:#aebdd0;font-size:9px;padding:5px 1px;cursor:pointer}.nav button span{display:block;font-size:18px;margin-bottom:2px}.nav button.active{color:var(--gold)}
+.avatar{width:62px;height:62px;border-radius:50%;border:2px solid var(--gold);background:#ffffff16;display:grid;place-items:center;font-size:25px;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}
+footer{text-align:center;color:#8192a8;font-size:9px;margin-top:25px;letter-spacing:1px}
+@media(min-width:650px){main{padding-top:28px}.welcome h1{font-size:33px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.plans{grid-template-columns:repeat(3,minmax(0,1fr))}.big{font-size:43px}.nav{left:50%;right:auto;transform:translateX(-50%);width:min(100%,760px);border:1px solid var(--line);border-bottom:0;border-radius:15px 15px 0 0}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="seal">★</div><div><b>USA.USD</b><small>PREMIUM DIGITAL PLATFORM</small></div></div><span class="secure">● SECURE PREVIEW</span></header>
+<main>
+<section class="page active" id="home">
+<div class="welcome"><h1>Welcome to USA.USD</h1><p>Your digital platform dashboard.</p></div>
+<div class="hero"><div class="eyebrow">TOTAL ACCOUNT BALANCE</div><div class="big">$0.00</div><div class="muted">Preview balance · No live funds connected</div><div class="actions"><button class="btn gold" onclick="go('wallet')">＋ ADD FUNDS</button><button class="btn ghost" onclick="go('wallet')">↗ WITHDRAW</button></div></div>
+<h2 class="section-title">Explore Your Platform</h2>
+<div class="grid">
+<button class="tile" onclick="go('wallet')"><span class="ico">▣</span><b>WALLET</b><small>Balances & transactions</small></button>
+<button class="tile" onclick="go('earn')"><span class="ico">✦</span><b>EARN</b><small>Activities & campaigns</small></button>
+<button class="tile" onclick="go('vip')"><span class="ico">♛</span><b>VIP MEMBERSHIP</b><small>12 membership levels</small></button>
+<button class="tile" onclick="go('team')"><span class="ico">♧</span><b>TEAM</b><small>Invitations & community</small></button>
+<button class="tile" onclick="go('profile')"><span class="ico">◎</span><b>PROFILE</b><small>Personal account</small></button>
+<button class="tile" onclick="go('support')"><span class="ico">◈</span><b>SUPPORT CENTER</b><small>Help & assistance</small></button>
+</div>
+<div class="notice"><b>Platform preview:</b> All financial and account figures are placeholders. No deposits, withdrawals, earnings, or purchases are active.</div>
+</section>
+<section class="page" id="wallet">
+<div class="welcome"><h1>Wallet Center</h1><p>Manage your wallet activity in one place.</p></div>
+<div class="hero"><div class="eyebrow">AVAILABLE BALANCE</div><div class="big">$0.00</div><div class="muted">Preview balance · Not connected to live funds</div><div class="actions"><button class="btn gold" onclick="alert('Deposit is not active in this preview.')">＋ DEPOSIT</button><button class="btn ghost" onclick="alert('Withdrawal is not active in this preview.')">↗ WITHDRAW</button></div></div>
+<div class="panel"><h2>Deposit Address</h2><p class="muted">A unique verified address will appear here after secure backend and network setup.</p><div class="notice">Do not send funds to this preview. No deposit address is currently active.</div></div>
+<div class="panel"><h2>Wallet Rules</h2><div class="rowline"><span>Minimum deposit</span><b>$10</b></div><div class="rowline"><span>Minimum withdrawal</span><b>$2</b></div><div class="rowline"><span>Withdrawal frequency</span><b>Once every 24 hours</b></div><div class="rowline"><span>Supported network</span><span>To be confirmed</span></div></div>
+<div class="panel"><h2>Recent Transactions</h2><p class="muted">No transactions yet.</p></div>
+</section>
+<section class="page" id="earn">
+<div class="welcome"><h1>Earn Center</h1><p>Explore genuine activity-based opportunities as they become available.</p></div>
+<div class="hero"><div class="eyebrow">YOUR EARNING SPACE</div><div class="big" style="font-size:27px">Build. Participate. Progress.</div><p class="muted">Verified activities and clear participation terms will be listed here.</p></div>
+<div class="grid"><div class="tile"><span class="ico">▣</span><b>DAILY ACTIVITIES</b><small>Coming soon</small></div><div class="tile"><span class="ico">✧</span><b>CAMPAIGNS</b><small>Coming soon</small></div><div class="tile"><span class="ico">♧</span><b>COMMUNITY TASKS</b><small>Coming soon</small></div><div class="tile"><span class="ico">▤</span><b>ACTIVITY HISTORY</b><small>Coming soon</small></div></div>
+<div class="notice">No fixed or guaranteed returns are promised. Any future rewards must be tied to genuine business activity and published terms.</div>
+</section>
+<section class="page" id="vip">
+<div class="welcome"><h1>VIP Membership</h1><p>Explore the planned membership tiers.</p></div>
+<div class="plans" id="plans"></div>
+<div class="notice">These are proposed price tiers for display only, not active purchases or investment products. No profit or return is guaranteed.</div>
+</section>
+<section class="page" id="team">
+<div class="welcome"><h1>Team Center</h1><p>Your community overview and invitation tools.</p></div>
+<div class="hero"><div class="eyebrow">USA.USD COMMUNITY</div><div class="big" style="font-size:27px">Connect. Collaborate. Grow.</div><p class="muted">Team statistics will appear after account and referral services are connected.</p></div>
+<div class="grid"><div class="tile"><b>TOTAL TEAM</b><small>—</small></div><div class="tile"><b>DIRECT INVITES</b><small>—</small></div><div class="tile"><b>ACTIVE MEMBERS</b><small>—</small></div></div>
+<div class="panel"><h2>Your Invitation Link</h2><p class="muted">Your personal referral link will be generated after account setup.</p></div>
+<div class="notice">Recruiting alone does not create guaranteed income. Any future referral rewards require transparent terms and genuine platform activity.</div>
+</section>
+<section class="page" id="profile">
+<div class="welcome"><h1>My Profile</h1><p>Manage your personal details and account preferences.</p></div>
+<div class="panel" style="display:flex;align-items:center;gap:14px"><div class="avatar" id="avatar">◎</div><div><b id="displayName">USA.USD Member</b><br><label class="btn gold" for="photo" style="display:inline-block;margin-top:7px">UPLOAD PHOTO</label><input id="photo" type="file" accept="image/*" hidden onchange="previewPhoto(event)"></div></div>
+<div class="panel"><h2>Personal Information</h2><div class="field"><label>DISPLAY NAME</label><input id="name" placeholder="Enter display name"></div><div class="field"><label>EMAIL ADDRESS</label><input id="email" type="email" placeholder="Enter email address"></div><button class="btn gold" onclick="saveProfile()">SAVE PREVIEW</button><p id="profileMsg" class="muted"></p></div>
+<div class="panel"><h2>Account Overview</h2><div class="rowline"><span>Account status</span><b>Preview</b></div><div class="rowline"><span>Membership</span><span>Not selected</span></div><div class="rowline"><span>Verification</span><span>Pending setup</span></div></div>
+</section>
+<section class="page" id="support">
+<div class="welcome"><h1>Support Center</h1><p>Find guidance or prepare a support request.</p></div>
+<div class="hero"><div class="eyebrow">USA.USD CUSTOMER CARE</div><div class="big" style="font-size:27px">We're Here to Help</div><p class="muted">Official support contact details will be added when configured.</p></div>
+<div class="grid"><div class="tile"><b>WALLET & PAYMENTS</b><small>Deposit and withdrawal guidance</small></div><div class="tile"><b>VIP MEMBERSHIP</b><small>Membership questions</small></div><div class="tile"><b>ACCOUNT & SECURITY</b><small>Profile and account safety</small></div></div>
+<div class="panel"><h2>Prepare a Support Request</h2><div class="field"><label>SUBJECT</label><select id="topic"><option>General question</option><option>Wallet question</option><option>VIP membership</option><option>Account and security</option><option>Technical issue</option></select></div><div class="field"><label>MESSAGE</label><textarea id="message" placeholder="Describe how we can help..."></textarea></div><button class="btn gold" onclick="previewRequest()">PREVIEW REQUEST</button><p id="supportMsg" class="muted"></p></div>
+<div class="notice">Never share passwords, private keys, or wallet recovery phrases with anyone claiming to be support.</div>
+</section>
+<footer>USA.USD · PREMIUM DIGITAL EXPERIENCE · FRONT-END PREVIEW</footer>
+</main>
+<nav class="nav">
+<button class="active" data-page="home" onclick="go('home')"><span>⌂</span>HOME</button>
+<button data-page="wallet" onclick="go('wallet')"><span>▣</span>WALLET</button>
+<button data-page="earn" onclick="go('earn')"><span>✦</span>EARN</button>
+<button data-page="vip" onclick="go('vip')"><span>♛</span>VIP</button>
+<button data-page="team" onclick="go('team')"><span>♧</span>TEAM</button>
+<button data-page="profile" onclick="go('profile')"><span>◎</span>PROFILE</button>
+<button data-page="support" onclick="go('support')"><span>◈</span>SUPPORT</button>
+</nav>
+<script>
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'})}
+const prices=[10,25,50,100,250,500,750,1000,1500,2000,3000,5000];
+document.getElementById('plans').innerHTML=prices.map((v,i)=>`<div class="plan"><div class="level">VIP LEVEL ${String(i+1).padStart(2,'0')}</div><strong>$${v.toLocaleString('en-US')}</strong><small>Membership tier · Coming soon</small></div>`).join('');
+function previewPhoto(e){const f=e.target.files&&e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>document.getElementById('avatar').innerHTML='<img alt="Profile preview" src="'+r.result+'">';r.readAsDataURL(f)}
+function saveProfile(){const n=document.getElementById('name').value.trim();if(n)document.getElementById('displayName').textContent=n;document.getElementById('profileMsg').textContent='Preview updated in this browser only. No live account is connected.'}
+function previewRequest(){document.getElementById('supportMsg').textContent='Preview only: your request has not been sent. Official support submission is not connected yet.'}
+</script>
+</body>
+</html>
