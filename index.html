@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071a38">
+<title>USA.USD | Digital Dashboard</title>
+<style>
+:root{--navy:#071a38;--blue:#123d79;--red:#c6283d;--gold:#e8bd58;--ink:#f7f8fc;--muted:#b9c6dc}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#244f86 0,#0a1d3c 44%,#050d1d 100%);color:var(--ink);font:15px system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:520px;margin:auto;padding:16px 14px 40px}.hero{position:relative;overflow:hidden;border:1px solid #d9b65c88;border-radius:24px;padding:22px 18px;background:linear-gradient(135deg,#102f61ee,#07152fee),repeating-linear-gradient(0deg,#fff1 0 2px,transparent 2px 8px);box-shadow:0 18px 50px #0007}
+.flag{font-size:28px}.eagle{font-size:54px;float:right;filter:drop-shadow(0 5px 8px #0008)}h1{font-size:28px;letter-spacing:2px;margin:8px 0 2px}.sub{color:var(--gold);letter-spacing:2px;font-size:11px;font-weight:800}.tag{color:var(--muted);margin-top:8px}.notice{font-size:11px;color:#ffe6a5;background:#3b2c14;border:1px solid #94743b;border-radius:12px;padding:10px;margin:14px 0}
+.section{display:flex;align-items:center;justify-content:space-between;margin:22px 2px 10px}.section h2{font-size:17px;margin:0}.pill{font-size:10px;color:var(--gold);border:1px solid #987a3e;border-radius:30px;padding:5px 9px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{border:1px solid #ffffff20;background:linear-gradient(145deg,#16396b,#0b1d3a);border-radius:16px;padding:14px;box-shadow:0 8px 22px #0003}.amount{font-size:20px;font-weight:800;color:#fff}.small{font-size:11px;color:var(--muted)}.gold{color:var(--gold)}button{border:0;border-radius:12px;padding:12px 14px;font-weight:800;color:#08172e;background:linear-gradient(110deg,#f5d77d,#c99a37);width:100%;margin-top:10px;cursor:pointer}.nav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.nav button{margin:0;background:#183b68;color:#fff;border:1px solid #ffffff24;padding:12px 5px;font-size:12px}.panel{margin-top:12px;border:1px solid #ffffff20;background:#0b1d39;border-radius:16px;padding:15px}.balance{font-size:29px;font-weight:850;color:var(--gold)}input{width:100%;padding:12px;border-radius:10px;border:1px solid #ffffff35;background:#07152b;color:white;margin:8px 0}footer{text-align:center;color:#8294b1;font-size:10px;margin-top:24px}
+</style></head>
+<body><main class="wrap">
+<header class="hero"><span class="flag">🇺🇸</span><span class="eagle">🦅</span><div class="sub">UNITED STATES • DIGITAL DASHBOARD</div><h1>USA.USD</h1><div class="tag">Your digital hub. Built for clarity.</div></header>
+<div class="notice">DEMO PREVIEW ONLY — no deposits, investments, earnings, or withdrawals are processed. Any calculator result is hypothetical and is not a promised return.</div>
+<div class="section"><h2>💎 Membership plans</h2><span class="pill">12 OPTIONS</span></div>
+<div class="grid" id="plans"></div>
+<div class="section"><h2>💼 My dashboard</h2><span class="pill">SIMULATED</span></div>
+<div class="panel"><div class="small">DEMO BALANCE</div><div class="balance">$0.00</div><div class="small">No real funds are held in this preview.</div></div>
+<div class="nav"><button onclick="show('Profile')">👤 Profile</button><button onclick="show('Referrals')">🎁 Referrals</button><button onclick="show('Support')">☎ Support</button></div>
+<div class="section"><h2>📊 Scenario calculator</h2></div>
+<div class="panel"><label for="amount" class="small">Example amount (USD)</label><input id="amount" type="number" min="0" value="10"><label for="days" class="small">Number of days</label><input id="days" type="number" min="1" max="365" value="30"><div id="calc" class="gold">Illustrative total: $10.00</div><div class="small">This is a simple hypothetical calculation, not a forecast or offer.</div><button onclick="calculate()">Calculate example</button></div>
+<div id="message" class="panel" hidden></div>
+<footer>USA.USD • Demo interface • Not a bank, broker, or payment service</footer>
+</main>
+<script>
+const amounts=[10,30,50,85,100,150,350,500,900,1500,3000,5000];
+document.getElementById('plans').innerHTML=amounts.map((v,i)=>`<article class="card"><div class="small">PLAN ${String(i+1).padStart(2,'0')}</div><div class="amount">$${v.toLocaleString('en-US')}</div><div class="small">Example tier • demo only</div><button onclick="show('Selected demo tier: $${v.toLocaleString('en-US')}')">View plan</button></article>`).join('');
+function calculate(){let a=Math.max(0,Number(document.getElementById('amount').value)||0),d=Math.max(1,Number(document.getElementById('days').value)||1);document.getElementById('calc').textContent='Illustrative total: $'+a.toFixed(2)+' (no return assumed)';}
+function show(s){let m=document.getElementById('message');m.hidden=false;m.textContent=s+' — this section is a design placeholder in the demo.'}
+</script></body></html>
