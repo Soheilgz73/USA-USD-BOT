@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>USA.USD — VIP Membership</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#28517d,#102b4a 48%,#07182c);color:#f7f8fc;font:15px/1.5 Arial,sans-serif}
+header{padding:20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff20}.brand{font-weight:900;letter-spacing:2px;font-size:20px}.brand span{color:#e8bd62}.tag{font-size:10px;color:#f1d28d;border:1px solid #d8ad5b66;padding:6px 10px;border-radius:30px}
+main{max-width:1000px;margin:auto;padding:24px 16px 45px}.intro{text-align:center;margin:8px auto 24px}.intro .crown{font-size:36px}.intro h1{margin:4px 0;font-size:29px;letter-spacing:1px}.intro p{color:#b8c5d7;margin:5px auto;max-width:570px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.plan{position:relative;overflow:hidden;border:1px solid #ffffff22;background:linear-gradient(145deg,#ffffff12,#ffffff06);border-radius:17px;padding:16px;min-height:152px}.plan.featured{border-color:#e8bd62aa;background:linear-gradient(145deg,#80602b55,#ffffff0a)}.level{font-size:10px;letter-spacing:1.5px;color:#e8c779}.price{font-size:26px;font-weight:800;margin:7px 0 2px}.desc{font-size:11px;color:#aebdd0}.status{display:inline-block;margin-top:13px;padding:6px 10px;border-radius:8px;background:#ffffff12;color:#e8d5a7;font-size:10px}
+.note{margin-top:20px;padding:14px;border-radius:13px;border:1px solid #e8bd6255;background:#e8bd6210;color:#ead8b3;font-size:12px}.back{display:inline-block;margin-bottom:18px;color:#e9c775;text-decoration:none;font-size:12px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.intro h1{font-size:36px}}
+</style></head>
+<body>
+<header><div class="brand">USA<span>.</span>USD</div><div class="tag">✦ VIP MEMBERSHIP</div></header>
+<main><a class="back" href="index.html">← BACK TO DASHBOARD</a>
+<section class="intro"><div class="crown">♛</div><h1>CHOOSE YOUR VIP LEVEL</h1><p>Explore the planned membership tiers of USA.USD. Each level is presented for information and design preview only.</p></section>
+<section class="grid" id="plans"></section>
+<div class="note"><strong>Important:</strong> These are proposed membership price tiers, not active purchases or investment products. No return, profit, or earning is guaranteed. Payment activation requires verified business terms, legal review, and secure backend integration.</div>
+</main>
+<script>
+const amounts=[10,25,50,100,250,500,750,1000,1500,2000,3000,5000];
+document.getElementById('plans').innerHTML=amounts.map((n,i)=>`<article class="plan ${i===5?'featured':''}"><div class="level">VIP LEVEL ${String(i+1).padStart(2,'0')}</div><div class="price">$${n.toLocaleString('en-US')}</div><div class="desc">Membership tier · Details to be announced</div><div class="status">COMING SOON</div></article>`).join('');
+</script></body></html>
