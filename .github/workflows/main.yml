@@ -2,26 +2,27 @@
 name: USA USD Bot
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
     steps:
-      - name: Get bot code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Install requirements
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run USA USD Bot
+      - name: Start bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: python bot.py
